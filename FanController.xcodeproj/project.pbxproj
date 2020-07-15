@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		830C6E9124BF6D40003C68C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6E9024BF6D40003C68C8 /* AppDelegate.swift */; };
+		830C6E9324BF6D40003C68C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6E9224BF6D40003C68C8 /* ViewController.swift */; };
+		830C6E9524BF6D41003C68C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 830C6E9424BF6D41003C68C8 /* Assets.xcassets */; };
+		830C6E9824BF6D41003C68C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830C6E9624BF6D41003C68C8 /* Main.storyboard */; };
+		830C6EA424BF6D41003C68C8 /* FanControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */; };
+		830C6EAF24BF6D42003C68C8 /* FanControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		830C6EA024BF6D41003C68C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 830C6E8524BF6D40003C68C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 830C6E8C24BF6D40003C68C8;
+			remoteInfo = FanController;
+		};
+		830C6EAB24BF6D42003C68C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 830C6E8524BF6D40003C68C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 830C6E8C24BF6D40003C68C8;
+			remoteInfo = FanController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		830C6E8D24BF6D40003C68C8 /* FanController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		830C6E9024BF6D40003C68C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		830C6E9224BF6D40003C68C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		830C6E9424BF6D41003C68C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		830C6E9724BF6D41003C68C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		830C6E9924BF6D41003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		830C6E9A24BF6D41003C68C8 /* FanController.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FanController.entitlements; sourceTree = "<group>"; };
+		830C6E9F24BF6D41003C68C8 /* FanControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControllerTests.swift; sourceTree = "<group>"; };
+		830C6EA524BF6D41003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControllerUITests.swift; sourceTree = "<group>"; };
+		830C6EB024BF6D42003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		830C6E8A24BF6D40003C68C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830C6E9C24BF6D41003C68C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830C6EA724BF6D42003C68C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		830C6E8424BF6D40003C68C8 = {
+			isa = PBXGroup;
+			children = (
+				830C6E8F24BF6D40003C68C8 /* FanController */,
+				830C6EA224BF6D41003C68C8 /* FanControllerTests */,
+				830C6EAD24BF6D42003C68C8 /* FanControllerUITests */,
+				830C6E8E24BF6D40003C68C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		830C6E8E24BF6D40003C68C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				830C6E8D24BF6D40003C68C8 /* FanController.app */,
+				830C6E9F24BF6D41003C68C8 /* FanControllerTests.xctest */,
+				830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		830C6E8F24BF6D40003C68C8 /* FanController */ = {
+			isa = PBXGroup;
+			children = (
+				830C6E9024BF6D40003C68C8 /* AppDelegate.swift */,
+				830C6E9224BF6D40003C68C8 /* ViewController.swift */,
+				830C6E9424BF6D41003C68C8 /* Assets.xcassets */,
+				830C6E9624BF6D41003C68C8 /* Main.storyboard */,
+				830C6E9924BF6D41003C68C8 /* Info.plist */,
+				830C6E9A24BF6D41003C68C8 /* FanController.entitlements */,
+			);
+			path = FanController;
+			sourceTree = "<group>";
+		};
+		830C6EA224BF6D41003C68C8 /* FanControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */,
+				830C6EA524BF6D41003C68C8 /* Info.plist */,
+			);
+			path = FanControllerTests;
+			sourceTree = "<group>";
+		};
+		830C6EAD24BF6D42003C68C8 /* FanControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */,
+				830C6EB024BF6D42003C68C8 /* Info.plist */,
+			);
+			path = FanControllerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		830C6E8C24BF6D40003C68C8 /* FanController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 830C6EB324BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanController" */;
+			buildPhases = (
+				830C6E8924BF6D40003C68C8 /* Sources */,
+				830C6E8A24BF6D40003C68C8 /* Frameworks */,
+				830C6E8B24BF6D40003C68C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FanController;
+			productName = FanController;
+			productReference = 830C6E8D24BF6D40003C68C8 /* FanController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		830C6E9E24BF6D41003C68C8 /* FanControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 830C6EB624BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerTests" */;
+			buildPhases = (
+				830C6E9B24BF6D41003C68C8 /* Sources */,
+				830C6E9C24BF6D41003C68C8 /* Frameworks */,
+				830C6E9D24BF6D41003C68C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				830C6EA124BF6D41003C68C8 /* PBXTargetDependency */,
+			);
+			name = FanControllerTests;
+			productName = FanControllerTests;
+			productReference = 830C6E9F24BF6D41003C68C8 /* FanControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		830C6EA924BF6D42003C68C8 /* FanControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 830C6EB924BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerUITests" */;
+			buildPhases = (
+				830C6EA624BF6D42003C68C8 /* Sources */,
+				830C6EA724BF6D42003C68C8 /* Frameworks */,
+				830C6EA824BF6D42003C68C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				830C6EAC24BF6D42003C68C8 /* PBXTargetDependency */,
+			);
+			name = FanControllerUITests;
+			productName = FanControllerUITests;
+			productReference = 830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		830C6E8524BF6D40003C68C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Christopher Boyle";
+				TargetAttributes = {
+					830C6E8C24BF6D40003C68C8 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					830C6E9E24BF6D41003C68C8 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 830C6E8C24BF6D40003C68C8;
+					};
+					830C6EA924BF6D42003C68C8 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 830C6E8C24BF6D40003C68C8;
+					};
+				};
+			};
+			buildConfigurationList = 830C6E8824BF6D40003C68C8 /* Build configuration list for PBXProject "FanController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 830C6E8424BF6D40003C68C8;
+			productRefGroup = 830C6E8E24BF6D40003C68C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				830C6E8C24BF6D40003C68C8 /* FanController */,
+				830C6E9E24BF6D41003C68C8 /* FanControllerTests */,
+				830C6EA924BF6D42003C68C8 /* FanControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		830C6E8B24BF6D40003C68C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				830C6E9524BF6D41003C68C8 /* Assets.xcassets in Resources */,
+				830C6E9824BF6D41003C68C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830C6E9D24BF6D41003C68C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830C6EA824BF6D42003C68C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		830C6E8924BF6D40003C68C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				830C6E9324BF6D40003C68C8 /* ViewController.swift in Sources */,
+				830C6E9124BF6D40003C68C8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830C6E9B24BF6D41003C68C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				830C6EA424BF6D41003C68C8 /* FanControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830C6EA624BF6D42003C68C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				830C6EAF24BF6D42003C68C8 /* FanControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		830C6EA124BF6D41003C68C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 830C6E8C24BF6D40003C68C8 /* FanController */;
+			targetProxy = 830C6EA024BF6D41003C68C8 /* PBXContainerItemProxy */;
+		};
+		830C6EAC24BF6D42003C68C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 830C6E8C24BF6D40003C68C8 /* FanController */;
+			targetProxy = 830C6EAB24BF6D42003C68C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		830C6E9624BF6D41003C68C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				830C6E9724BF6D41003C68C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		830C6EB124BF6D42003C68C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		830C6EB224BF6D42003C68C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		830C6EB424BF6D42003C68C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FanController/FanController.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FanController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		830C6EB524BF6D42003C68C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FanController/FanController.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FanController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		830C6EB724BF6D42003C68C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FanControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FanController.app/Contents/MacOS/FanController";
+			};
+			name = Debug;
+		};
+		830C6EB824BF6D42003C68C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FanControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FanController.app/Contents/MacOS/FanController";
+			};
+			name = Release;
+		};
+		830C6EBA24BF6D42003C68C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FanControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FanController;
+			};
+			name = Debug;
+		};
+		830C6EBB24BF6D42003C68C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FanControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FanController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		830C6E8824BF6D40003C68C8 /* Build configuration list for PBXProject "FanController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				830C6EB124BF6D42003C68C8 /* Debug */,
+				830C6EB224BF6D42003C68C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		830C6EB324BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				830C6EB424BF6D42003C68C8 /* Debug */,
+				830C6EB524BF6D42003C68C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		830C6EB624BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				830C6EB724BF6D42003C68C8 /* Debug */,
+				830C6EB824BF6D42003C68C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		830C6EB924BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				830C6EBA24BF6D42003C68C8 /* Debug */,
+				830C6EBB24BF6D42003C68C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 830C6E8524BF6D40003C68C8 /* Project object */;
+}
