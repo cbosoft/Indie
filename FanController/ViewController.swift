@@ -10,6 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var chk_temperature: NSButton!
+    @IBOutlet weak var chk_floating_setpoint: NSButton!
     @IBOutlet weak var quit_button: NSButton!
     
     override func viewDidLoad() {
