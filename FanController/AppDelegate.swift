@@ -14,9 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var status_update_timer = Timer()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItem.button?.title = " "
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
+        statusItem.button?.font = NSFont.systemFont(ofSize: 8)
         
         do {
             try SMCKit.open()
