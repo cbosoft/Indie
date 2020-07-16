@@ -10,6 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var quit_button: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,15 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func quit_clicked(_ sender: Any) {
+        exit(0)
+    }
+    
+    @IBAction func chk_temperature_toggled(_ sender: Any) {
+        self.chk_floating_setpoint.isEnabled = (self.chk_temperature.state == NSControl.StateValue.on)
+    }
+    
+    @IBAction func chk_floating_toggled(_ sender: Any) {
+    }
+    
 }
-
