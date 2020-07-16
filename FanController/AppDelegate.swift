@@ -12,11 +12,15 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var status_update_timer = Timer()
+    var cpu_temp  :Double = 0.0
+    var fan_speed :Double = 0.0
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
         statusItem.button?.font = NSFont.systemFont(ofSize: 8)
+        
         
         do {
             try SMCKit.open()
@@ -25,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("could not open connection to SMC \(error)")
             exit(1)
         }
+        
         
         updateDisplayedText()
         
@@ -47,13 +52,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         do {
             let fan1speed = try SMCKit.fanCurrentSpeed(0)
             let fan2speed = try SMCKit.fanCurrentSpeed(1)
-            fan_str = String(format: "%.0f", (fan1speed+fan2speed)*0.5)
+            self.fan_speed = (fan1speed + fan2speed)*0.5
+            fan_str = String(format: "%.0f", self.fan_speed)
             
             let cpu1_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC1C"))
             let cpu2_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC2C"))
             let cpu3_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC3C"))
             let cpu4_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC4C"))
-            let cpu_temp = (cpu1_temp + cpu2_temp + cpu3_temp + cpu4_temp) * 0.25
+            self.cpu_temp = (cpu1_temp + cpu2_temp + cpu3_temp + cpu4_temp) * 0.25
             temp_str = String(format: "%.0f", cpu_temp)
         }
         catch {
