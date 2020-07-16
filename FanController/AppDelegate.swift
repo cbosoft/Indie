@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    var timer = Timer()
+    var status_update_timer = Timer()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.title = " "
@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
 
-        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) {
+        status_update_timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) {
           timer in
             self.updateDisplayedText(timer: timer)
         }
