@@ -101,7 +101,7 @@ extension Double {
     
     func toFLT_() -> FLT_ {
         let f = Float(self)
-        let u32 = f.bitPattern
+        let u32 = CFSwapInt32(f.bitPattern)
         let rv : FLT_ = (
             UInt8(u32 >> 24),
             UInt8((u32 >> 16) & 0xff),
@@ -765,7 +765,7 @@ extension SMCKit {
         if speed <= 0.0 || speed > maxSpeed { throw SMCError.unsafeFanSpeed }
 
         let data = speed.toFLT_()
-        let bytes: SMCBytes = (data.0, data.1, UInt8(0), UInt8(0), UInt8(0), UInt8(0),
+        let bytes: SMCBytes = (data.0, data.1, data.2, data.3, UInt8(0), UInt8(0),
                                UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
                                UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
                                UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
