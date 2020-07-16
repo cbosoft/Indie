@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Foundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -63,6 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         catch {
             // do nothing
+            NSLog("Error reading values \(error)")
         }
         
         self.statusItem.button?.title = String(format: "%@ rpm\n%@ºC", fan_str, temp_str)
