@@ -362,7 +362,7 @@ public struct SMCKit {
     @discardableResult
     public static func close() -> Bool {
         let result = IOServiceClose(SMCKit.connection)
-        return result == kIOReturnSuccess ? true : false
+        return result == kIOReturnSuccess
     }
 
     /// Get information about a key
