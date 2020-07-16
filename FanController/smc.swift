@@ -36,6 +36,9 @@ import Foundation
 /// Floating point, unsigned, 14 bits exponent, 2 bits fraction
 public typealias FPE2 = (UInt8, UInt8)
 
+/// Single precision floating point number
+public typealias FLT_ = (UInt8, UInt8, UInt8, UInt8)
+
 /// Floating point, signed, 7 bits exponent, 8 bits fraction
 public typealias SP78 = (UInt8, UInt8)
 
@@ -89,6 +92,27 @@ extension Double {
         let sign = bytes.0 & 0x80 == 0 ? 1.0 : -1.0
         self = sign * Double(bytes.0 & 0x7F)    // AND to mask sign bit
     }
+    
+    init(fromFLT_ bytes: FLT_) {
+        var u32 = UInt32(bytes.3)
+        u32 += UInt32(bytes.2) << 8
+        u32 += UInt32(bytes.1) << 16
+        u32 += UInt32(bytes.0) << 24
+        self = Double(Float(bitPattern: u32))
+    }
+    
+    func toFLT_() -> FLT_ {
+        let f = Float(self)
+        let u32 = f.bitPattern
+        let rv : FLT_ = (
+            UInt8(u32 >> 24),
+            UInt8((u32 >> 16) & 0xff),
+            UInt8((u32 >> 16) & 0xff),
+            UInt8(u32 & 0xff)
+        )
+        return rv
+    }
+    
 }
 
 // Thanks to Airspeed Velocity for the great idea!
@@ -245,6 +269,8 @@ public struct DataTypes {
                  DataType(type: FourCharCode(fromStaticString: "ui8 "), size: 1)
     public static let UInt32 =
                  DataType(type: FourCharCode(fromStaticString: "ui32"), size: 4)
+    public static let FLT_ =
+                 DataType(type: FourCharCode(fromStaticString: "flt "), size: 4)
 }
 
 public struct SMCKey {
@@ -260,6 +286,13 @@ public struct DataType: Equatable {
 public func ==(lhs: DataType, rhs: DataType) -> Bool {
     return lhs.type == rhs.type && lhs.size == rhs.size
 }
+
+
+
+
+
+
+
 
 /// Apple System Management Controller (SMC) user-space client for Intel-based
 /// Macs. Works by talking to the AppleSMC.kext (kernel extension), the closed
@@ -623,8 +656,8 @@ public struct Fan {
     // TODO: Should we start the fan id from 1 instead of 0?
     public let id: Int
     public let name: String
-    public let minSpeed: Int
-    public let maxSpeed: Int
+    public let minSpeed: Double
+    public let maxSpeed: Double
 }
 
 extension SMCKit {
@@ -683,28 +716,28 @@ extension SMCKit {
         return name.trimmingCharacters(in: characterSet)
     }
 
-    public static func fanCurrentSpeed(_ id: Int) throws -> Int {
+    public static func fanCurrentSpeed(_ id: Int) throws -> Double {
         let key = SMCKey(code: FourCharCode(fromString: "F\(id)Ac"),
-                                            info: DataTypes.FPE2)
-
+                                            info: DataTypes.FLT_)
+        
         let data = try readData(key)
-        return Int(fromFPE2: (data.0, data.1))
+        return Double(fromFLT_: (data.0, data.1, data.2, data.3))
     }
 
-    public static func fanMinSpeed(_ id: Int) throws -> Int {
+    public static func fanMinSpeed(_ id: Int) throws -> Double {
         let key = SMCKey(code: FourCharCode(fromString: "F\(id)Mn"),
-                                            info: DataTypes.FPE2)
+                                            info: DataTypes.FLT_)
 
         let data = try readData(key)
-        return Int(fromFPE2: (data.0, data.1))
+        return Double(fromFLT_: (data.0, data.1, data.2, data.3))
     }
 
-    public static func fanMaxSpeed(_ id: Int) throws -> Int {
+    public static func fanMaxSpeed(_ id: Int) throws -> Double {
         let key = SMCKey(code: FourCharCode(fromString: "F\(id)Mx"),
-                                            info: DataTypes.FPE2)
+                                            info: DataTypes.FLT_)
 
         let data = try readData(key)
-        return Int(fromFPE2: (data.0, data.1))
+        return Double(fromFLT_: (data.0, data.1, data.2, data.3))
     }
 
     /// Requires root privileges. By minimum we mean that OS X can interject and
@@ -713,11 +746,11 @@ extension SMCKit {
     /// WARNING: You are playing with hardware here, BE CAREFUL.
     ///
     /// - Throws: Of note, `SMCKit.SMCError`'s `UnsafeFanSpeed` and `NotPrivileged`
-    public static func fanSetMinSpeed(_ id: Int, speed: Int) throws {
+    public static func fanSetMinSpeed(_ id: Int, speed: Double) throws {
         let maxSpeed = try fanMaxSpeed(id)
-        if speed <= 0 || speed > maxSpeed { throw SMCError.unsafeFanSpeed }
+        if speed <= 0.0 || speed > maxSpeed { throw SMCError.unsafeFanSpeed }
 
-        let data = speed.toFPE2()
+        let data = speed.toFLT_()
         let bytes: SMCBytes = (data.0, data.1, UInt8(0), UInt8(0), UInt8(0), UInt8(0),
                                UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
                                UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
