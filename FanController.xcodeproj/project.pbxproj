@@ -48,6 +48,7 @@
 		830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControllerUITests.swift; sourceTree = "<group>"; };
 		830C6EB024BF6D42003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		830C6EBE24BF9444003C68C8 /* smc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smc.swift; sourceTree = "<group>"; };
+		83CAC8FB24C0B80700D0FBBA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		830C6E8424BF6D40003C68C8 = {
 			isa = PBXGroup;
 			children = (
+				83CAC8FB24C0B80700D0FBBA /* README.md */,
 				830C6E8F24BF6D40003C68C8 /* FanController */,
 				830C6EA224BF6D41003C68C8 /* FanControllerTests */,
 				830C6EAD24BF6D42003C68C8 /* FanControllerUITests */,
