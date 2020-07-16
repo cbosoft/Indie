@@ -322,6 +322,21 @@ public struct SMCKit {
         /// - parameter SMCResult: SMC specific return code
         case unknown(kIOReturn: kern_return_t, SMCResult: UInt8)
     }
+    
+    // dict of kern_return_t to string to allow pretty printing of return type
+    public static let rvName = [
+        kIOReturnInvalid: "invalid",
+        kIOReturnError: "error",
+        kIOReturnBusy: "busy",
+        kIOReturnAborted: "aborted",
+        kIOReturnSuccess: "success",
+        kIOReturnNotFound: "not found",
+        kIOReturnBadArgument: "bad arg",
+        kIOReturnNotOpen: "not open",
+        kIOReturnOverrun: "overrun",
+        kIOReturnNotPermitted: "not permitted",
+        kIOReturnNotPrivileged: "not priveleged",
+    ]
 
     /// Connection to the SMC driver
     fileprivate static var connection: io_connect_t = 0
@@ -334,10 +349,12 @@ public struct SMCKit {
 
         if service == 0 { throw SMCError.driverNotFound }
 
-        let result = IOServiceOpen(service, mach_task_self_, 0,
-                                   &SMCKit.connection)
+        let result = IOServiceOpen(service, mach_task_self_, 0, &SMCKit.connection)
         IOObjectRelease(service)
-
+        
+        let rvname = rvName[result] ?? "unknown error"
+        NSLog("SMCKit.open returned %@", rvname)
+        
         if result != kIOReturnSuccess { throw SMCError.failedToOpen }
     }
 
@@ -383,7 +400,6 @@ public struct SMCKit {
         inputStruct.data8 = SMCParamStruct.Selector.kSMCReadKey.rawValue
 
         let outputStruct = try callDriver(&inputStruct)
-
         return outputStruct.bytes
     }
 
@@ -636,7 +652,7 @@ extension SMCKit {
         let data = try readData(SMCKey(code: sensorCode, info: DataTypes.SP78))
 
         let temperatureInCelius = Double(fromSP78: (data.0, data.1))
-
+        
         switch unit {
         case .celius:
             return temperatureInCelius
