@@ -94,11 +94,9 @@ extension Double {
     }
     
     init(fromFLT_ bytes: FLT_) {
-        var u32 = UInt32(bytes.3)
-        u32 += UInt32(bytes.2) << 8
-        u32 += UInt32(bytes.1) << 16
-        u32 += UInt32(bytes.0) << 24
-        self = Double(Float(bitPattern: u32))
+        let u32 = CFSwapInt32(UInt32(fromBytes: bytes))
+        let f = Float(bitPattern: u32)
+        self = Double(f)
     }
     
     func toFLT_() -> FLT_ {

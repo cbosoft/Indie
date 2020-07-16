@@ -13,7 +13,6 @@
 		830C6E9824BF6D41003C68C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830C6E9624BF6D41003C68C8 /* Main.storyboard */; };
 		830C6EA424BF6D41003C68C8 /* FanControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */; };
 		830C6EAF24BF6D42003C68C8 /* FanControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */; };
-		830C6EBD24BF9419003C68C8 /* FanController in Resources */ = {isa = PBXBuildFile; fileRef = 830C6EBC24BF9419003C68C8 /* FanController */; };
 		830C6EBF24BF9444003C68C8 /* smc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EBE24BF9444003C68C8 /* smc.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +47,7 @@
 		830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControllerUITests.swift; sourceTree = "<group>"; };
 		830C6EB024BF6D42003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		830C6EBC24BF9419003C68C8 /* FanController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FanController; sourceTree = "<group>"; };
 		830C6EBE24BF9444003C68C8 /* smc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smc.swift; sourceTree = "<group>"; };
-		83A6881524C06460002BF10F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +78,6 @@
 		830C6E8424BF6D40003C68C8 = {
 			isa = PBXGroup;
 			children = (
-				83A6881524C06460002BF10F /* README.md */,
 				830C6E8F24BF6D40003C68C8 /* FanController */,
 				830C6EA224BF6D41003C68C8 /* FanControllerTests */,
 				830C6EAD24BF6D42003C68C8 /* FanControllerUITests */,
@@ -107,7 +103,6 @@
 				830C6E9224BF6D40003C68C8 /* ViewController.swift */,
 				830C6E9424BF6D41003C68C8 /* Assets.xcassets */,
 				830C6E9624BF6D41003C68C8 /* Main.storyboard */,
-				830C6EBC24BF9419003C68C8 /* FanController */,
 				830C6E9924BF6D41003C68C8 /* Info.plist */,
 				830C6E9A24BF6D41003C68C8 /* FanController.entitlements */,
 			);
@@ -236,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830C6EBD24BF9419003C68C8 /* FanController in Resources */,
 				830C6E9524BF6D41003C68C8 /* Assets.xcassets in Resources */,
 				830C6E9824BF6D41003C68C8 /* Main.storyboard in Resources */,
 			);
