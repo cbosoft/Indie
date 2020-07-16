@@ -1,6 +1,6 @@
 //
-// SMC.swift
-// SMCKit
+// Original Code written by beltex <https://beltex.github.io>
+// Update by cbosoft <https://github.com/cbosoft>
 //
 // The MIT License
 //
