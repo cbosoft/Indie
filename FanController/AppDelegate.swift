@@ -26,7 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             exit(1)
         }
         
-
+        updateDisplayedText()
+        
         status_update_timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) {
           timer in
             self.updateDisplayedText(timer: timer)
@@ -38,32 +39,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SMCKit.close()
     }
     
+    
+    func updateDisplayedText() {
+        var fan_str = "--"
+        var temp_str = "--"
+        
+        do {
+            let fan1speed = try SMCKit.fanCurrentSpeed(0)
+            let fan2speed = try SMCKit.fanCurrentSpeed(1)
+            fan_str = String(format: "%.0f", (fan1speed+fan2speed)*0.5)
+            
+            let cpu1_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC1C"))
+            let cpu2_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC2C"))
+            let cpu3_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC3C"))
+            let cpu4_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC4C"))
+            let cpu_temp = (cpu1_temp + cpu2_temp + cpu3_temp + cpu4_temp) * 0.25
+            temp_str = String(format: "%.0f", cpu_temp)
+        }
+        catch {
+            // do nothing
+        }
+        
+        self.statusItem.button?.title = String(format: "%@ rpm\n%@ºC", fan_str, temp_str)
+
+    }
+    
     // https://stackoverflow.com/questions/29561476/run-background-task-as-loop-in-swift/29564713#29564713
     @objc func updateDisplayedText(timer:Timer) {
         DispatchQueue.global(qos: DispatchQoS.background.qosClass).async {
 
               DispatchQueue.main.async {
-                var fan_str = "--"
-                var temp_str = "--"
-                
-                do {
-                    let fan1speed = try SMCKit.fanCurrentSpeed(0)
-                    let fan2speed = try SMCKit.fanCurrentSpeed(1)
-                    fan_str = String(format: "%.0f", (fan1speed+fan2speed)*0.5)
-                    
-                    let cpu1_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC1C"))
-                    let cpu2_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC2C"))
-                    let cpu3_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC3C"))
-                    let cpu4_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC4C"))
-                    let cpu_temp = (cpu1_temp + cpu2_temp + cpu3_temp + cpu4_temp) * 0.25
-                    temp_str = String(format: "%.0f", cpu_temp)
-                }
-                catch {
-                    // do nothing
-                }
-                
-                self.statusItem.button?.title = String(format: "%@ rpm %@ºC", fan_str, temp_str)
-              }
+                self.updateDisplayedText()
+             }
           }
     }
 
