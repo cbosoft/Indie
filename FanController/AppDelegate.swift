@@ -13,6 +13,7 @@ import Foundation
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var status_update_timer = Timer()
+    var control_timer = Timer()
     var cpu_temp  :Double = 0.0
     var fan_speed :Double = 0.0
     
@@ -32,11 +33,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         
+        updateFanSpeed()
         updateDisplayedText()
         
         status_update_timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) {
           timer in
             self.updateDisplayedText(timer: timer)
+        }
+        
+        control_timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
+          timer in
+            self.updateFanSpeed(timer: timer)
         }
     }
 
@@ -46,29 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func updateDisplayedText() {
-        var fan_str = "--"
-        var temp_str = "--"
-        
-        do {
-            let fan1speed = try SMCKit.fanCurrentSpeed(0)
-            let fan2speed = try SMCKit.fanCurrentSpeed(1)
-            self.fan_speed = (fan1speed + fan2speed)*0.5
-            fan_str = String(format: "%.0f", self.fan_speed)
-            
-            let cpu1_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC1C"))
-            let cpu2_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC2C"))
-            let cpu3_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC3C"))
-            let cpu4_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC4C"))
-            self.cpu_temp = (cpu1_temp + cpu2_temp + cpu3_temp + cpu4_temp) * 0.25
-            temp_str = String(format: "%.0f", cpu_temp)
-        }
-        catch {
-            // do nothing
-            NSLog("Error reading values \(error)")
-        }
-        
-        self.statusItem.button?.title = String(format: "%@ rpm\n%@ºC", fan_str, temp_str)
-
+        self.statusItem.button?.title = String(format: "%.0f rpm\n%.0fºC", self.fan_speed, self.cpu_temp)
     }
     
     // https://stackoverflow.com/questions/29561476/run-background-task-as-loop-in-swift/29564713#29564713
@@ -77,6 +62,50 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
               DispatchQueue.main.async {
                 self.updateDisplayedText()
+             }
+          }
+    }
+    
+    func updateFanSpeed() {
+        do {
+            let fan1speed = try SMCKit.fanCurrentSpeed(0)
+            let fan2speed = try SMCKit.fanCurrentSpeed(1)
+            self.fan_speed = (fan1speed + fan2speed)*0.5
+
+            let cpu1_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC1C"))
+            let cpu2_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC2C"))
+            let cpu3_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC3C"))
+            let cpu4_temp = try SMCKit.temperature(IOFourCharCode(fromStaticString: "TC4C"))
+            self.cpu_temp = (cpu1_temp + cpu2_temp + cpu3_temp + cpu4_temp) * 0.25
+        }
+        catch {
+            // do nothing
+            NSLog("Error reading values \(error)")
+        }
+        
+        // TODO get control action from PID controller
+        let control_action :Double = 2e3
+        let data = control_action.toFLT_()
+        let bytes: SMCBytes = (data.0, data.1, data.2, data.3, UInt8(0), UInt8(0),
+                               UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
+                               UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
+                               UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
+                               UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
+                               UInt8(0), UInt8(0))
+        do {
+            try SMCKit.writeData(SMCKey(code: IOFourCharCode(fromStaticString: "F0Tg"),
+                                info: DataTypes.FLT_), data: bytes)
+        }
+        catch {
+            NSLog("Couldn't write SMC: \(error)")
+        }
+    }
+    
+    @objc func updateFanSpeed(timer:Timer) {
+        DispatchQueue.global(qos: DispatchQoS.background.qosClass).async {
+
+              DispatchQueue.main.async {
+                self.updateFanSpeed()
              }
           }
     }
