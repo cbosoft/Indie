@@ -51,6 +51,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SMCKit.close()
     }
     
+    @objc func showSettings() {
+        let popoverView = NSPopover()
+        
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateController(withIdentifier: "viewController") as? ViewController else {
+            NSLog("Could not get ref to viewController!")
+            exit(1)
+        }
+        
+        popoverView.contentViewController = vc
+        popoverView.behavior = .transient
+        popoverView.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
+    }
     
     func updateDisplayedText() {
         self.statusItem.button?.title = String(format: "%.0f rpm\n%.0fºC", self.fan_speed, self.cpu_temp)
