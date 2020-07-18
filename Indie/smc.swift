@@ -442,6 +442,43 @@ public struct SMCKit {
                                 SMCResult: outputStruct.result)
         }
     }
+    
+    public static func easyReadData(_ key: String) -> Double {
+        let keyCode = FourCharCode(fromString: key)
+        
+        do {
+            let dataType = try keyInformation(keyCode)
+            let keyObj = SMCKey(code: keyCode, info: dataType)
+            
+            do {
+                let bytes = try readData(keyObj)
+                switch (dataType) {
+                case DataTypes.FLT_:
+                    return Double(fromFLT_: (bytes.0, bytes.1, bytes.2, bytes.3))
+                    
+                case DataTypes.FPE2:
+                    return Double(Int(fromFPE2: (bytes.0, bytes.1) ))
+                    
+                case DataTypes.SP78:
+                    return Double(fromSP78: (bytes.0, bytes.1))
+                    
+                default:
+                    print("easy read: unknown type encountered", dataType.type.toString())
+                    return Double.nan
+                }
+            }
+            catch {
+                print("easy read: error reading data \(error)")
+                return Double.nan
+            }
+            
+        }
+        catch {
+            print("easy read: error making keyInfo \(error)")
+            return Double.nan
+        }
+        
+    }
 }
 
 //------------------------------------------------------------------------------
