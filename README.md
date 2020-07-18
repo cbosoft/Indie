@@ -1,11 +1,6 @@
-# FanController
+# Indie
 
-A free, open (MIT Licensed) fan controller for macOS 10.15 and above. Fan speed is controller by 
-PID algorithm, with current speed and temperatures shown in the status bar.
+A free and open (MIT Licensed) macOS system indicator applet for the menu bar.
 
 Makes use of the excellent SMCKit library by [beltex](https://github.com/beltex/SMCKit), with
 some modifications.
-
-# TODO
-    - Figure out how to elevate to admin level priveleges
-    - Add PID controller
