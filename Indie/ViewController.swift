@@ -320,8 +320,7 @@ class ViewController: NSViewController {
         else {
             // is custom
             self.setProperty1IsCustom(true)
-            rad_p1_type.state = NSControl.StateValue.off
-            var keys = self.predef_keys[predef_key!]!
+            var keys = prop1
             let units = keys.removeLast()
             var s = keys.removeFirst()
             for key in keys {
@@ -340,15 +339,14 @@ class ViewController: NSViewController {
             let predef_key = self.strArr_in_predef(strings: prop2)
             if predef_key != nil {
                 // is prebuilt
-                self.setProperty1IsCustom(false)
+                self.setProperty2IsCustom(false)
                 let predef_key_name = predef_key!
                 dd_p2_choose.selectItem(withTitle: predef_key_name)
             }
             else {
                 // is custom
-                self.setProperty1IsCustom(true)
-                rad_p2_type.state = NSControl.StateValue.off
-                var keys = self.predef_keys[predef_key!]!
+                self.setProperty2IsCustom(true)
+                var keys = prop2
                 let units = keys.removeLast()
                 var s = keys.removeFirst()
                 for key in keys {
