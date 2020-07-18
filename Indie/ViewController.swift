@@ -138,6 +138,7 @@ class ViewController: NSViewController {
     
     /// Checkbox deciding whether p2 is enabled or nah
     @IBAction func chk_p2_enabled_changed(_ sender: Any) {
+        self.updateProperty2IsEnabled()
         self.update()
     }
     
