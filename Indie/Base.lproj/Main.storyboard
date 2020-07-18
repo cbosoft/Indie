@@ -715,7 +715,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="chck_p1_changed:" target="XfG-lQ-9wD" id="JgX-kz-gf4"/>
+                                    <action selector="chk_p1_changed:" target="XfG-lQ-9wD" id="JgX-kz-gf4"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-D0-G3s">
@@ -725,7 +725,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="chck_p1_changed:" target="XfG-lQ-9wD" id="AWJ-QS-Ssp"/>
+                                    <action selector="chk_p1_changed:" target="XfG-lQ-9wD" id="AWJ-QS-Ssp"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-nt-Izy">
@@ -888,8 +888,9 @@
                         <outlet property="ent_p2_custom" destination="ys2-8V-eCq" id="nis-OR-mn0"/>
                         <outlet property="quit_button" destination="LnS-wF-k8i" id="yfA-DN-oac"/>
                         <outlet property="rad_p1_type" destination="BiJ-3C-El0" id="8Ai-NV-uqI"/>
-                        <outlet property="rad_p2_other" destination="UPc-Ha-Uml" id="RkL-MG-AG7"/>
+                        <outlet property="rad_p1_type_alt" destination="Kbf-D0-G3s" id="Th8-b2-OEB"/>
                         <outlet property="rad_p2_type" destination="t4y-nt-Izy" id="NgG-zF-Rxu"/>
+                        <outlet property="rad_p2_type_alt" destination="UPc-Ha-Uml" id="RkL-MG-AG7"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

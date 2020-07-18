@@ -121,7 +121,7 @@ class ViewController: NSViewController {
         exit(0)
     }
     
-    @IBAction func chck_p1_changed(_ sender: Any) {
+    @IBAction func chk_p1_changed(_ sender: Any) {
         
         // predicate on predefined: true if predefined key
         let predef_p = self.rad_p1_type.state == NSControl.StateValue.on
