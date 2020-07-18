@@ -10,9 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    var update_timer = Timer()
-    
+    // MARK: IB Outlets
     @IBOutlet weak var rad_p1_type: NSButton!
     @IBOutlet weak var rad_p2_type: NSButton!
     @IBOutlet weak var rad_p2_other: NSButton!
@@ -24,10 +22,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var ent_p2_custom: NSTextField!
     @IBOutlet weak var chk_p2_enabled: NSButton!
     
+    // MARK: Variables
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    var update_timer = Timer()
     let popover: NSPopover = NSPopover()
     var properties: [Property] = []
     
-    // TODO: generate based on system
+    // MARK: TODO: generate based on system
     let predef_keys = [
         "Fan 0 Speed": ["F0Ac", "Speed"],
         "CPU 0 Proximity Temp.": ["TC0P", "Temperature"],
@@ -40,11 +41,10 @@ class ViewController: NSViewController {
         "None": ""
     ];
     
+    // MARK: -
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("view loaded")
-        // TODO load predef_keys based on system
         
         // Set predefined keys in drop downs
         dd_p1_choose.removeAllItems();
@@ -62,22 +62,25 @@ class ViewController: NSViewController {
             dd_p2_custom_type.addItem(withTitle: kv.key)
         }
         
+        // setup popover
         popover.contentViewController = self
         popover.behavior = .transient
         
+        // open popover on status click
         statusItem.button?.target = self
         statusItem.button?.action = #selector(show)
-        statusItem.button?.font = NSFont.systemFont(ofSize: 8)
         
         
-        
+        // show status initial value
         measureAndShow()
         
+        // update values every second
         update_timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
           timer in
             self.measureAndShow(timer: timer)
         }
     }
+    // MARK: -
     
     @objc func show() {
         self.popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
