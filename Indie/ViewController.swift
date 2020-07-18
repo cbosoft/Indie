@@ -38,6 +38,7 @@ class ViewController: NSViewController {
     let units = [
         "Temperature": "ºC",
         "Speed": " rpm",
+        "Percentage": " %",
         "None": ""
     ];
     
