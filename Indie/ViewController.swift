@@ -142,6 +142,11 @@ class ViewController: NSViewController {
         self.update()
     }
     
+    /// Any non-control changing UI element is changed (drop downs, text entries)
+    @IBAction func propert_sub_changed(_ sender: Any) {
+        self.update()
+    }
+    
     // MARK: -
     // MARK: Get Property 1
     func get_property_1() -> Property
