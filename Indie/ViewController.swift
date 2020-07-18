@@ -29,7 +29,10 @@ class ViewController: NSViewController {
     let popover: NSPopover = NSPopover()
     var properties: [Property] = []
     
-    // MARK: TODO: generate based on system
+    // MARK: TODO
+    /// Need to change these to ones that are generated based on the capabilities of the system.
+    /// Not all Macs have 4 cores, not all have ONLY 4 cores. Not all macs have fans, not all macs
+    /// have two fans etc etc.
     let predef_keys = [
         "Fan Av. Speed": ["F0Ac", "F1Ac", " rpm"],
         "CPU 0 Proximity Temp.": ["TC0P", "ºC"],
