@@ -81,12 +81,15 @@ class ViewController: NSViewController {
             self.measureAndShow(timer: timer)
         }
     }
-    // MARK: -
     
+    // MARK: -
+    // MARK: Show Popover
     @objc func show() {
         self.popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
     }
     
+    // MARK: -
+    // MARK: Measure and show
     func measureAndShow() {
         if (self.properties.count == 1) {
             statusItem.button?.font = NSFont.systemFont(ofSize: 13)
@@ -113,6 +116,9 @@ class ViewController: NSViewController {
              }
           }
     }
+    
+    // MARK: -
+    // MARK: IB Actions
 
     @IBAction func quit_clicked(_ sender: Any) {
         exit(0)
@@ -136,6 +142,8 @@ class ViewController: NSViewController {
         self.update()
     }
     
+    // MARK: -
+    // MARK: Get Property 1
     func get_property_1() -> Property
     {
         var prop = Property()
@@ -180,7 +188,8 @@ class ViewController: NSViewController {
         return prop
     }
     
-    
+    // MARK: -
+    // MARK: Get Property 2
     func get_property_2() -> Property
     {
         var prop = Property()
@@ -230,6 +239,8 @@ class ViewController: NSViewController {
         return prop
     }
     
+    // MARK: -
+    // MARK: Get Properties
     func get_properties() -> [Property] {
         var rv: [Property] = []
         
@@ -246,6 +257,9 @@ class ViewController: NSViewController {
         return rv
     }
     
+    // MARK: -
+    // MARK: Update
+    /// Called after the form is changed by the user. The properties array is rebuilt, and saved to disk.
     func update() {
         self.properties = self.get_properties()
         self.save()
