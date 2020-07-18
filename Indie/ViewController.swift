@@ -67,6 +67,7 @@ class ViewController: NSViewController {
         
         // set up properties
         self.properties = self.load_previous_or_defaults()
+        self.reflect()
         
         // show status initial value
         measureAndShow()
@@ -320,6 +321,79 @@ class ViewController: NSViewController {
         defaults.set(prop_ser, forKey: "indie_properties")
     }
     
+    // MARK: -
+    // MARK: Reflect state->UI
+    /// Reflect the contents of the properties array onto the UI. Called after the a previous state is loaded.
+    func reflect() {
+        
+        print("reflect", self.properties)
+        if self.properties.count == 0 {
+            return
+        }
+        
+        let prop1 = self.properties[0].toStringArr()
+        print(prop1)
+        let predef_key = self.strArr_in_predef(strings: prop1)
+        if predef_key != nil {
+            // is prebuilt
+            self.setProperty1IsCustom(false)
+            let predef_key_name = predef_key!
+            dd_p1_choose.selectItem(withTitle: predef_key_name)
+        }
+        else {
+            // is custom
+            self.setProperty1IsCustom(true)
+            rad_p1_type.state = NSControl.StateValue.off
+            var keys = self.predef_keys[predef_key!]!
+            let units = keys.removeLast()
+            var s = keys.removeFirst()
+            for key in keys {
+                s += ","
+                s += key
+            }
+            ent_p1_custom.stringValue = s
+            self.dd_p1_custom_type.selectItem(withTitle: units)
+        }
+        
+        
+        if self.properties.count == 2 {
+            let prop2 = self.properties[1].toStringArr()
+            print(prop2)
+            let predef_key = self.strArr_in_predef(strings: prop2)
+            if predef_key != nil {
+                // is prebuilt
+                self.setProperty1IsCustom(false)
+                let predef_key_name = predef_key!
+                dd_p2_choose.selectItem(withTitle: predef_key_name)
+            }
+            else {
+                // is custom
+                self.setProperty1IsCustom(true)
+                rad_p2_type.state = NSControl.StateValue.off
+                var keys = self.predef_keys[predef_key!]!
+                let units = keys.removeLast()
+                var s = keys.removeFirst()
+                for key in keys {
+                    s += ","
+                    s += key
+                }
+                ent_p2_custom.stringValue = s
+                self.dd_p2_custom_type.selectItem(withTitle: units)
+            }
+        }
+    }
+    
+    // MARK: -
+    // MARK: check predefined for strarr
+    func strArr_in_predef(strings: [String]) -> String? {
+        for kv in self.predef_keys {
+            print(strings, kv.value)
+            if strings == kv.value {
+                print(kv.key)
+                return kv.key
+            }
+        }
+        return nil
     }
     
     // MARK: -
