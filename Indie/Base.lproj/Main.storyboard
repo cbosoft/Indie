@@ -879,6 +879,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chk_p2_enabled" destination="yFX-dE-7Ft" id="u7B-xi-zmb"/>
                         <outlet property="dd_p1_choose" destination="gAC-Or-lPc" id="Nce-m3-UYd"/>
                         <outlet property="dd_p1_custom_type" destination="oOe-Ge-KUr" id="dDP-B3-Fhy"/>
                         <outlet property="dd_p2_choose" destination="oOd-wQ-YpW" id="0Td-Q5-FZg"/>
@@ -887,6 +888,7 @@
                         <outlet property="ent_p2_custom" destination="ys2-8V-eCq" id="nis-OR-mn0"/>
                         <outlet property="quit_button" destination="LnS-wF-k8i" id="yfA-DN-oac"/>
                         <outlet property="rad_p1_type" destination="BiJ-3C-El0" id="8Ai-NV-uqI"/>
+                        <outlet property="rad_p2_other" destination="UPc-Ha-Uml" id="RkL-MG-AG7"/>
                         <outlet property="rad_p2_type" destination="t4y-nt-Izy" id="NgG-zF-Rxu"/>
                     </connections>
                 </viewController>
