@@ -11,8 +11,8 @@
 		830C6E9324BF6D40003C68C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6E9224BF6D40003C68C8 /* ViewController.swift */; };
 		830C6E9524BF6D41003C68C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 830C6E9424BF6D41003C68C8 /* Assets.xcassets */; };
 		830C6E9824BF6D41003C68C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830C6E9624BF6D41003C68C8 /* Main.storyboard */; };
-		830C6EA424BF6D41003C68C8 /* FanControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */; };
-		830C6EAF24BF6D42003C68C8 /* FanControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */; };
+		830C6EA424BF6D41003C68C8 /* IndieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EA324BF6D41003C68C8 /* IndieTests.swift */; };
+		830C6EAF24BF6D42003C68C8 /* IndieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EAE24BF6D42003C68C8 /* IndieUITests.swift */; };
 		830C6EBF24BF9444003C68C8 /* smc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C6EBE24BF9444003C68C8 /* smc.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,30 +22,30 @@
 			containerPortal = 830C6E8524BF6D40003C68C8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 830C6E8C24BF6D40003C68C8;
-			remoteInfo = FanController;
+			remoteInfo = Indie;
 		};
 		830C6EAB24BF6D42003C68C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 830C6E8524BF6D40003C68C8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 830C6E8C24BF6D40003C68C8;
-			remoteInfo = FanController;
+			remoteInfo = Indie;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		830C6E8D24BF6D40003C68C8 /* FanController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		830C6E8D24BF6D40003C68C8 /* Indie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Indie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830C6E9024BF6D40003C68C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		830C6E9224BF6D40003C68C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		830C6E9424BF6D41003C68C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		830C6E9724BF6D41003C68C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		830C6E9924BF6D41003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		830C6E9A24BF6D41003C68C8 /* FanController.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FanController.entitlements; sourceTree = "<group>"; };
-		830C6E9F24BF6D41003C68C8 /* FanControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControllerTests.swift; sourceTree = "<group>"; };
+		830C6E9A24BF6D41003C68C8 /* Indie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Indie.entitlements; sourceTree = "<group>"; };
+		830C6E9F24BF6D41003C68C8 /* IndieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		830C6EA324BF6D41003C68C8 /* IndieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieTests.swift; sourceTree = "<group>"; };
 		830C6EA524BF6D41003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControllerUITests.swift; sourceTree = "<group>"; };
+		830C6EAA24BF6D42003C68C8 /* IndieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		830C6EAE24BF6D42003C68C8 /* IndieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieUITests.swift; sourceTree = "<group>"; };
 		830C6EB024BF6D42003C68C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		830C6EBE24BF9444003C68C8 /* smc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smc.swift; sourceTree = "<group>"; };
 		83CAC8FB24C0B80700D0FBBA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -80,9 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				83CAC8FB24C0B80700D0FBBA /* README.md */,
-				830C6E8F24BF6D40003C68C8 /* FanController */,
-				830C6EA224BF6D41003C68C8 /* FanControllerTests */,
-				830C6EAD24BF6D42003C68C8 /* FanControllerUITests */,
+				830C6E8F24BF6D40003C68C8 /* Indie */,
+				830C6EA224BF6D41003C68C8 /* IndieTests */,
+				830C6EAD24BF6D42003C68C8 /* IndieUITests */,
 				830C6E8E24BF6D40003C68C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,14 +90,14 @@
 		830C6E8E24BF6D40003C68C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				830C6E8D24BF6D40003C68C8 /* FanController.app */,
-				830C6E9F24BF6D41003C68C8 /* FanControllerTests.xctest */,
-				830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */,
+				830C6E8D24BF6D40003C68C8 /* Indie.app */,
+				830C6E9F24BF6D41003C68C8 /* IndieTests.xctest */,
+				830C6EAA24BF6D42003C68C8 /* IndieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		830C6E8F24BF6D40003C68C8 /* FanController */ = {
+		830C6E8F24BF6D40003C68C8 /* Indie */ = {
 			isa = PBXGroup;
 			children = (
 				830C6E9024BF6D40003C68C8 /* AppDelegate.swift */,
@@ -106,35 +106,35 @@
 				830C6E9424BF6D41003C68C8 /* Assets.xcassets */,
 				830C6E9624BF6D41003C68C8 /* Main.storyboard */,
 				830C6E9924BF6D41003C68C8 /* Info.plist */,
-				830C6E9A24BF6D41003C68C8 /* FanController.entitlements */,
+				830C6E9A24BF6D41003C68C8 /* Indie.entitlements */,
 			);
-			path = FanController;
+			path = Indie;
 			sourceTree = "<group>";
 		};
-		830C6EA224BF6D41003C68C8 /* FanControllerTests */ = {
+		830C6EA224BF6D41003C68C8 /* IndieTests */ = {
 			isa = PBXGroup;
 			children = (
-				830C6EA324BF6D41003C68C8 /* FanControllerTests.swift */,
+				830C6EA324BF6D41003C68C8 /* IndieTests.swift */,
 				830C6EA524BF6D41003C68C8 /* Info.plist */,
 			);
-			path = FanControllerTests;
+			path = IndieTests;
 			sourceTree = "<group>";
 		};
-		830C6EAD24BF6D42003C68C8 /* FanControllerUITests */ = {
+		830C6EAD24BF6D42003C68C8 /* IndieUITests */ = {
 			isa = PBXGroup;
 			children = (
-				830C6EAE24BF6D42003C68C8 /* FanControllerUITests.swift */,
+				830C6EAE24BF6D42003C68C8 /* IndieUITests.swift */,
 				830C6EB024BF6D42003C68C8 /* Info.plist */,
 			);
-			path = FanControllerUITests;
+			path = IndieUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		830C6E8C24BF6D40003C68C8 /* FanController */ = {
+		830C6E8C24BF6D40003C68C8 /* Indie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 830C6EB324BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanController" */;
+			buildConfigurationList = 830C6EB324BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "Indie" */;
 			buildPhases = (
 				830C6E8924BF6D40003C68C8 /* Sources */,
 				830C6E8A24BF6D40003C68C8 /* Frameworks */,
@@ -144,14 +144,14 @@
 			);
 			dependencies = (
 			);
-			name = FanController;
-			productName = FanController;
-			productReference = 830C6E8D24BF6D40003C68C8 /* FanController.app */;
+			name = Indie;
+			productName = Indie;
+			productReference = 830C6E8D24BF6D40003C68C8 /* Indie.app */;
 			productType = "com.apple.product-type.application";
 		};
-		830C6E9E24BF6D41003C68C8 /* FanControllerTests */ = {
+		830C6E9E24BF6D41003C68C8 /* IndieTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 830C6EB624BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerTests" */;
+			buildConfigurationList = 830C6EB624BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "IndieTests" */;
 			buildPhases = (
 				830C6E9B24BF6D41003C68C8 /* Sources */,
 				830C6E9C24BF6D41003C68C8 /* Frameworks */,
@@ -162,14 +162,14 @@
 			dependencies = (
 				830C6EA124BF6D41003C68C8 /* PBXTargetDependency */,
 			);
-			name = FanControllerTests;
-			productName = FanControllerTests;
-			productReference = 830C6E9F24BF6D41003C68C8 /* FanControllerTests.xctest */;
+			name = IndieTests;
+			productName = IndieTests;
+			productReference = 830C6E9F24BF6D41003C68C8 /* IndieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		830C6EA924BF6D42003C68C8 /* FanControllerUITests */ = {
+		830C6EA924BF6D42003C68C8 /* IndieUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 830C6EB924BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerUITests" */;
+			buildConfigurationList = 830C6EB924BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "IndieUITests" */;
 			buildPhases = (
 				830C6EA624BF6D42003C68C8 /* Sources */,
 				830C6EA724BF6D42003C68C8 /* Frameworks */,
@@ -180,9 +180,9 @@
 			dependencies = (
 				830C6EAC24BF6D42003C68C8 /* PBXTargetDependency */,
 			);
-			name = FanControllerUITests;
-			productName = FanControllerUITests;
-			productReference = 830C6EAA24BF6D42003C68C8 /* FanControllerUITests.xctest */;
+			name = IndieUITests;
+			productName = IndieUITests;
+			productReference = 830C6EAA24BF6D42003C68C8 /* IndieUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +208,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 830C6E8824BF6D40003C68C8 /* Build configuration list for PBXProject "FanController" */;
+			buildConfigurationList = 830C6E8824BF6D40003C68C8 /* Build configuration list for PBXProject "Indie" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -221,9 +221,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				830C6E8C24BF6D40003C68C8 /* FanController */,
-				830C6E9E24BF6D41003C68C8 /* FanControllerTests */,
-				830C6EA924BF6D42003C68C8 /* FanControllerUITests */,
+				830C6E8C24BF6D40003C68C8 /* Indie */,
+				830C6E9E24BF6D41003C68C8 /* IndieTests */,
+				830C6EA924BF6D42003C68C8 /* IndieUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830C6EA424BF6D41003C68C8 /* FanControllerTests.swift in Sources */,
+				830C6EA424BF6D41003C68C8 /* IndieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830C6EAF24BF6D42003C68C8 /* FanControllerUITests.swift in Sources */,
+				830C6EAF24BF6D42003C68C8 /* IndieUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +286,12 @@
 /* Begin PBXTargetDependency section */
 		830C6EA124BF6D41003C68C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 830C6E8C24BF6D40003C68C8 /* FanController */;
+			target = 830C6E8C24BF6D40003C68C8 /* Indie */;
 			targetProxy = 830C6EA024BF6D41003C68C8 /* PBXContainerItemProxy */;
 		};
 		830C6EAC24BF6D42003C68C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 830C6E8C24BF6D40003C68C8 /* FanController */;
+			target = 830C6E8C24BF6D40003C68C8 /* Indie */;
 			targetProxy = 830C6EAB24BF6D42003C68C8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -425,16 +425,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FanController/FanController.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Indie/Indie.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FanController/Info.plist;
+				INFOPLIST_FILE = Indie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanController;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.Indie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -444,16 +444,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FanController/FanController.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Indie/Indie.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FanController/Info.plist;
+				INFOPLIST_FILE = Indie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanController;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.Indie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -466,17 +466,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FanControllerTests/Info.plist;
+				INFOPLIST_FILE = IndieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.IndieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FanController.app/Contents/MacOS/FanController";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Indie.app/Contents/MacOS/Indie";
 			};
 			name = Debug;
 		};
@@ -487,17 +487,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FanControllerTests/Info.plist;
+				INFOPLIST_FILE = IndieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.IndieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FanController.app/Contents/MacOS/FanController";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Indie.app/Contents/MacOS/Indie";
 			};
 			name = Release;
 		};
@@ -507,16 +507,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FanControllerUITests/Info.plist;
+				INFOPLIST_FILE = IndieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.IndieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = FanController;
+				TEST_TARGET_NAME = Indie;
 			};
 			name = Debug;
 		};
@@ -526,23 +526,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FanControllerUITests/Info.plist;
+				INFOPLIST_FILE = IndieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.FanControllerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = cbosoft.IndieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = FanController;
+				TEST_TARGET_NAME = Indie;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		830C6E8824BF6D40003C68C8 /* Build configuration list for PBXProject "FanController" */ = {
+		830C6E8824BF6D40003C68C8 /* Build configuration list for PBXProject "Indie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830C6EB124BF6D42003C68C8 /* Debug */,
@@ -551,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		830C6EB324BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanController" */ = {
+		830C6EB324BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "Indie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830C6EB424BF6D42003C68C8 /* Debug */,
@@ -560,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		830C6EB624BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerTests" */ = {
+		830C6EB624BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "IndieTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830C6EB724BF6D42003C68C8 /* Debug */,
@@ -569,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		830C6EB924BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "FanControllerUITests" */ = {
+		830C6EB924BF6D42003C68C8 /* Build configuration list for PBXNativeTarget "IndieUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830C6EBA24BF6D42003C68C8 /* Debug */,

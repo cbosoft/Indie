@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "830C6E8C24BF6D40003C68C8"
-               BuildableName = "FanController.app"
-               BlueprintName = "FanController"
-               ReferencedContainer = "container:FanController.xcodeproj">
+               BuildableName = "Indie.app"
+               BlueprintName = "Indie"
+               ReferencedContainer = "container:Indie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,12 +28,32 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "830C6E9E24BF6D41003C68C8"
+               BuildableName = "IndieTests.xctest"
+               BlueprintName = "IndieTests"
+               ReferencedContainer = "container:Indie.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "830C6EA924BF6D42003C68C8"
+               BuildableName = "IndieUITests.xctest"
+               BlueprintName = "IndieUITests"
+               ReferencedContainer = "container:Indie.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "830C6E8C24BF6D40003C68C8"
-            BuildableName = "FanController.app"
-            BlueprintName = "FanController"
-            ReferencedContainer = "container:FanController.xcodeproj">
+            BuildableName = "Indie.app"
+            BlueprintName = "Indie"
+            ReferencedContainer = "container:Indie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "830C6E8C24BF6D40003C68C8"
-            BuildableName = "FanController.app"
-            BlueprintName = "FanController"
-            ReferencedContainer = "container:FanController.xcodeproj">
+            BuildableName = "Indie.app"
+            BlueprintName = "Indie"
+            ReferencedContainer = "container:Indie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

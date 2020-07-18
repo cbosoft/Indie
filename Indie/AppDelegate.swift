@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FanController
+//  Indie
 //
 //  Created by Christopher Boyle on 15/07/2020.
 //  Copyright © 2020 Christopher Boyle. All rights reserved.
