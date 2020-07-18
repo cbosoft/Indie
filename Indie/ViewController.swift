@@ -163,7 +163,6 @@ class ViewController: NSViewController {
         var prop = Property()
         
         if (self.rad_p1_type == nil) {
-            print("rad is nil")
             return prop
         }
 
@@ -176,7 +175,7 @@ class ViewController: NSViewController {
             }
             catch {
                 // Property init failed, leave it as default
-                print("property init failed")
+                print("property init failed \(error)")
             }
         }
         else {
@@ -196,7 +195,7 @@ class ViewController: NSViewController {
             }
             catch {
                 // Property init failed, leave it as default
-                print("custom property init failed")
+                print("custom property init failed \(error)")
             }
         }
         
@@ -226,7 +225,7 @@ class ViewController: NSViewController {
             }
             catch {
                 // Property init failed, leave it as default
-                print("property init failed")
+                print("property init failed \(error)")
             }
         }
         else {
@@ -246,7 +245,7 @@ class ViewController: NSViewController {
             }
             catch {
                 // Property init failed, leave it as default
-                print("custom property init failed")
+                print("custom property init failed \(error)")
             }
         }
         
@@ -302,7 +301,7 @@ class ViewController: NSViewController {
                 try rv.append(Property(fromStringArr: prop))
             }
             catch {
-                print("Error loading from persistent storage")
+                print("Error loading from persistent storage \(error)")
                 return default_properties()
             }
         }
