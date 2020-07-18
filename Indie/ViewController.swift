@@ -86,12 +86,6 @@ class ViewController: NSViewController {
     @objc func show() {
         self.popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
     
     func measureAndShow() {
         if (self.properties.count == 1) {
