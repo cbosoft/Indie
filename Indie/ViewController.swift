@@ -121,40 +121,20 @@ class ViewController: NSViewController {
         exit(0)
     }
     
+    /// Check box deciding whether Property 1 is custom or predefined
     @IBAction func chk_p1_changed(_ sender: Any) {
-        
-        // predicate on predefined: true if predefined key
-        let predef_p = self.rad_p1_type.state == NSControl.StateValue.on
-
-        self.dd_p1_choose.isEnabled = predef_p;
-        self.ent_p1_custom.isEnabled = !predef_p;
-        self.dd_p1_custom_type.isEnabled = !predef_p;
-        
+        self.updateProperty1IsCustom()
         self.update()
     }
     
+    /// Check box deciding whether Property 2 is custom or predefined
     @IBAction func chk_p2_changed(_ sender: Any) {
-        
-        // predicate on predefined: true if predefined key
-        let predef_p = self.rad_p2_type.state == NSControl.StateValue.on
-
-        self.dd_p2_choose.isEnabled = predef_p;
-        self.ent_p2_custom.isEnabled = !predef_p;
-        self.dd_p2_custom_type.isEnabled = !predef_p;
-        
+        self.updateProperty2IsCustom()
         self.update()
     }
     
+    /// Checkbox deciding whether p2 is enabled or nah
     @IBAction func chk_p2_enabled_changed(_ sender: Any) {
-        let enstate = self.chk_p2_enabled.state == NSControl.StateValue.on;
-        let tstate = self.rad_p2_type.state == NSControl.StateValue.on
-        
-        self.rad_p2_type.isEnabled = enstate
-        self.rad_p2_type_alt.isEnabled = enstate
-        self.dd_p2_choose.isEnabled = enstate && tstate
-        self.ent_p2_custom.isEnabled = enstate && !tstate
-        self.dd_p2_custom_type.isEnabled = enstate && !tstate
-        
         self.update()
     }
     
@@ -354,7 +334,8 @@ class ViewController: NSViewController {
             self.dd_p1_custom_type.selectItem(withTitle: units)
         }
         
-        
+
+        self.setPropert2IsEnabled(self.properties.count == 2)
         if self.properties.count == 2 {
             let prop2 = self.properties[1].toStringArr()
             print(prop2)
@@ -398,15 +379,46 @@ class ViewController: NSViewController {
     // MARK: -
     // MARK: UI Helper funcs
     
-    func setProperty1IsCustom(_ v: Bool) {
-        self.rad_p1_type.state = v ? NSControl.StateValue.off : NSControl.StateValue.on
-        self.rad_p1_type_alt.state = v ? NSControl.StateValue.on : NSControl.StateValue.off
-        self.chk_p1_changed("no")
+    func setProperty1IsCustom(_ isCustom: Bool) {
+        self.rad_p1_type.state = isCustom ? NSControl.StateValue.off : NSControl.StateValue.on
+        self.rad_p1_type_alt.state = isCustom ? NSControl.StateValue.on : NSControl.StateValue.off
+        self.updateProperty1IsCustom()
     }
     
-    func setProperty2IsCustom(_ v: Bool) {
-        self.rad_p2_type.state = v ? NSControl.StateValue.off : NSControl.StateValue.on
-        self.rad_p2_type_alt.state = v ? NSControl.StateValue.on : NSControl.StateValue.off
-        self.chk_p2_changed("no")
+    func updateProperty1IsCustom() {
+        let isCustom = self.rad_p1_type.state == NSControl.StateValue.on
+        self.dd_p1_choose.isEnabled = isCustom
+        self.ent_p1_custom.isEnabled = !isCustom
+        self.dd_p1_custom_type.isEnabled = !isCustom
+    }
+    
+    func setProperty2IsCustom(_ isCustom: Bool) {
+        self.rad_p2_type.state = isCustom ? NSControl.StateValue.off : NSControl.StateValue.on
+        self.rad_p2_type_alt.state = isCustom ? NSControl.StateValue.on : NSControl.StateValue.off
+        self.updateProperty2IsCustom()
+    }
+    
+    func updateProperty2IsCustom() {
+        let isCustom = self.rad_p2_type.state == NSControl.StateValue.on
+        self.dd_p2_choose.isEnabled = isCustom
+        self.ent_p2_custom.isEnabled = !isCustom
+        self.dd_p2_custom_type.isEnabled = !isCustom
+    }
+    
+    func setPropert2IsEnabled(_ isEnabled: Bool) {
+        self.chk_p2_enabled.state = isEnabled ? NSControl.StateValue.on : NSControl.StateValue.off
+        self.updateProperty2IsEnabled()
+    }
+    
+    func updateProperty2IsEnabled() {
+        let isEnabled = self.chk_p2_enabled.state == NSControl.StateValue.on
+        let isCustom = self.rad_p2_type.state == NSControl.StateValue.on
+        
+        self.rad_p2_type.isEnabled = isEnabled
+        self.rad_p2_type_alt.isEnabled = isEnabled
+        self.dd_p2_choose.isEnabled = isEnabled && isCustom
+        self.ent_p2_custom.isEnabled = isEnabled && !isCustom
+        self.dd_p2_custom_type.isEnabled = isEnabled && !isCustom
+        
     }
 }
