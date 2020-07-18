@@ -202,7 +202,7 @@ class ViewController: NSViewController {
             return prop
         }
 
-        if (self.rad_p1_type.state == NSControl.StateValue.on) {
+        if (self.rad_p2_type.state == NSControl.StateValue.on) {
             let keyName = self.dd_p2_choose.titleOfSelectedItem ?? self.predef_keys.keys.first!
             var keys = self.predef_keys[keyName]!
             let units = keys.removeLast()
