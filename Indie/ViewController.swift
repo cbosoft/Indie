@@ -12,8 +12,9 @@ class ViewController: NSViewController {
     
     // MARK: IB Outlets
     @IBOutlet weak var rad_p1_type: NSButton!
+    @IBOutlet weak var rad_p1_type_alt: NSButton!
     @IBOutlet weak var rad_p2_type: NSButton!
-    @IBOutlet weak var rad_p2_other: NSButton!
+    @IBOutlet weak var rad_p2_type_alt: NSButton!
     @IBOutlet weak var dd_p1_choose: NSPopUpButton!
     @IBOutlet weak var dd_p2_choose: NSPopUpButton!
     @IBOutlet weak var dd_p1_custom_type: NSPopUpButton!
@@ -155,7 +156,7 @@ class ViewController: NSViewController {
         let tstate = self.rad_p2_type.state == NSControl.StateValue.on
         
         self.rad_p2_type.isEnabled = enstate
-        self.rad_p2_other.isEnabled = enstate
+        self.rad_p2_type_alt.isEnabled = enstate
         self.dd_p2_choose.isEnabled = enstate && tstate
         self.ent_p2_custom.isEnabled = enstate && !tstate
         self.dd_p2_custom_type.isEnabled = enstate && !tstate
@@ -332,4 +333,20 @@ class ViewController: NSViewController {
         defaults.set(prop_ser, forKey: "indie_properties")
     }
     
+    }
+    
+    // MARK: -
+    // MARK: UI Helper funcs
+    
+    func setProperty1IsCustom(_ v: Bool) {
+        self.rad_p1_type.state = v ? NSControl.StateValue.off : NSControl.StateValue.on
+        self.rad_p1_type_alt.state = v ? NSControl.StateValue.on : NSControl.StateValue.off
+        self.chk_p1_changed("no")
+    }
+    
+    func setProperty2IsCustom(_ v: Bool) {
+        self.rad_p2_type.state = v ? NSControl.StateValue.off : NSControl.StateValue.on
+        self.rad_p2_type_alt.state = v ? NSControl.StateValue.on : NSControl.StateValue.off
+        self.chk_p2_changed("no")
+    }
 }
