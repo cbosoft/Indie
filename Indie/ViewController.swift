@@ -71,6 +71,8 @@ class ViewController: NSViewController {
         statusItem.button?.target = self
         statusItem.button?.action = #selector(show)
         
+        // set up properties
+        self.properties = self.load_previous_or_defaults()
         
         // show status initial value
         measureAndShow()
@@ -280,6 +282,54 @@ class ViewController: NSViewController {
     
     func update() {
         self.properties = self.get_properties()
+        self.save()
+    }
+    
+    // MARK: -
+    // MARK: Defaults
+    /// Returns the default set of properties.
+    func default_properties() -> [Property] {
+        return [
+            try! Property(fromArr: ["F0Ac", "F1Ac"], units: self.units["Speed"]!),
+            try! Property(fromArr: ["TC1C", "TC2C", "TC3C", "TC4C"], units: self.units["Temperature"]!)
+        ]
+    }
+    
+    // MARK: -
+    // MARK: Load
+    /// Load the previous set of properties, or get the default set.
+    func load_previous_or_defaults() -> [Property] {
+        let defaults = UserDefaults.standard
+        let value = defaults.array(forKey: "indie_properties")
+
+        if value == nil {
+            return default_properties()
+        }
+        
+        let properties = value as! [[String]]
+        var rv: [Property] = []
+        for prop in properties {
+            do {
+                try rv.append(Property(fromStringArr: prop))
+            }
+            catch {
+                print("Error loading from persistent storage")
+                return default_properties()
+            }
+        }
+        return rv
+    }
+    
+    // MARK: -
+    // MARK: Save
+    /// Save the properties to persistent storage for loading next time.
+    func save() {
+        let defaults = UserDefaults.standard
+        var prop_ser: [[String]] = []
+        for prop in self.properties {
+            prop_ser.append(prop.toStringArr())
+        }
+        defaults.set(prop_ser, forKey: "indie_properties")
     }
     
 }
