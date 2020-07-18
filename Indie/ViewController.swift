@@ -31,17 +31,12 @@ class ViewController: NSViewController {
     
     // MARK: TODO: generate based on system
     let predef_keys = [
-        "Fan 0 Speed": ["F0Ac", "Speed"],
-        "CPU 0 Proximity Temp.": ["TC0P", "Temperature"],
-        "CPU 0 Av. Core Temp.": ["TC1C", "TC2C", "TC3C", "TC4C", "Temperature"]
+        "Fan Av. Speed": ["F0Ac", "F1Ac", " rpm"],
+        "CPU 0 Proximity Temp.": ["TC0P", "ºC"],
+        "CPU 0 Av. Core Temp.": ["TC1C", "TC2C", "TC3C", "TC4C", "ºC"]
     ];
     
-    let units = [
-        "Temperature": "ºC",
-        "Speed": " rpm",
-        "Percentage": " %",
-        "None": ""
-    ];
+    let units = ["ºC", " rpm", " %", ""];
     
     // MARK: -
     // MARK: viewDidLoad
@@ -59,10 +54,8 @@ class ViewController: NSViewController {
         // Set units in drop downs
         dd_p1_custom_type.removeAllItems();
         dd_p2_custom_type.removeAllItems();
-        for kv in self.units {
-            dd_p1_custom_type.addItem(withTitle: kv.key)
-            dd_p2_custom_type.addItem(withTitle: kv.key)
-        }
+        dd_p1_custom_type.addItems(withTitles: self.units)
+        dd_p2_custom_type.addItems(withTitles: self.units)
         
         // setup popover
         popover.contentViewController = self
@@ -175,11 +168,8 @@ class ViewController: NSViewController {
 
         if (self.rad_p1_type.state == NSControl.StateValue.on) {
             let keyName = self.dd_p1_choose.titleOfSelectedItem ?? self.predef_keys.keys.first!
-            print(keyName)
             var keys = self.predef_keys[keyName]!
-            print(keys)
-            let units = self.units[keys.last!] ?? "";
-            let _ = keys.removeLast()
+            let units = keys.removeLast()
             do {
                 prop = try Property(fromArr: keys, units: units)
             }
@@ -198,7 +188,7 @@ class ViewController: NSViewController {
                 keys.append(ss)
             }
             
-            let units = self.units[self.dd_p1_custom_type.titleOfSelectedItem!]!
+            let units = self.dd_p1_custom_type.titleOfSelectedItem!
             
             do {
                 prop = try Property(fromArr: keys, units: units)
@@ -228,11 +218,8 @@ class ViewController: NSViewController {
 
         if (self.rad_p1_type.state == NSControl.StateValue.on) {
             let keyName = self.dd_p2_choose.titleOfSelectedItem ?? self.predef_keys.keys.first!
-            print(keyName)
             var keys = self.predef_keys[keyName]!
-            print(keys)
-            let units = self.units[keys.last!] ?? "";
-            let _ = keys.removeLast()
+            let units = keys.removeLast()
             do {
                 prop = try Property(fromArr: keys, units: units)
             }
@@ -251,7 +238,7 @@ class ViewController: NSViewController {
                 keys.append(ss)
             }
             
-            let units = self.units[self.dd_p2_custom_type.titleOfSelectedItem!]!
+            let units = self.dd_p2_custom_type.titleOfSelectedItem!
             
             do {
                 prop = try Property(fromArr: keys, units: units)
@@ -291,8 +278,8 @@ class ViewController: NSViewController {
     /// Returns the default set of properties.
     func default_properties() -> [Property] {
         return [
-            try! Property(fromArr: ["F0Ac", "F1Ac"], units: self.units["Speed"]!),
-            try! Property(fromArr: ["TC1C", "TC2C", "TC3C", "TC4C"], units: self.units["Temperature"]!)
+            try! Property(fromArr: ["F0Ac", "F1Ac"], units: " rpm"),
+            try! Property(fromArr: ["TC1C", "TC2C", "TC3C", "TC4C"], units: "ºC")
         ]
     }
     
