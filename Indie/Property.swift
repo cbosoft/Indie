@@ -45,6 +45,20 @@ class Property {
     
     }
     
+    init(fromStringArr strings: [String]) throws {
+        var keys = strings
+        let units = keys.removeLast()
+        
+        for key in keys {
+            if (key.count != 4) {
+                throw errors.keyLengthError
+            }
+        }
+        
+        self.keys = keys
+        self.units = units
+    }
+    
     func is_empty() -> Bool {
         return self.keys.count == 0
     }
@@ -66,5 +80,12 @@ class Property {
         let display: Double = n>0 ? tot/Double(n) : Double.nan
         
         return String(format: "%.1f%@", display, self.units)
+    }
+    
+    func toStringArr() -> [String] {
+        var rv: [String] = []
+        rv.append(contentsOf: self.keys)
+        rv.append(self.units)
+        return rv
     }
 }
