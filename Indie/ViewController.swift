@@ -165,7 +165,6 @@ class ViewController: NSViewController {
             }
         }
         else {
-            // TODO construct from custom
             let s = self.ent_p1_custom.stringValue
             let parts = s.split(separator: ",")
             var keys: [String] = []
@@ -216,7 +215,6 @@ class ViewController: NSViewController {
             }
         }
         else {
-            // TODO construct from custom
             let s = self.ent_p2_custom.stringValue
             let parts = s.split(separator: ",")
             var keys: [String] = []
