@@ -26,7 +26,7 @@ class Property {
     
     init(fromString key: String, units: String) throws {
         
-        if key.count != 4 {
+        if key.count != 4 && !key_is_custom(key) {
             throw errors.keyLengthError
         }
         
@@ -37,7 +37,7 @@ class Property {
     init(fromArr keys: [String], units: String) throws {
         
         for key in keys {
-            if (key.count != 4) {
+            if (key.count != 4 && !key_is_custom(key)) {
                 throw errors.keyLengthError
             }
         }
@@ -52,13 +52,22 @@ class Property {
         let units = keys.removeLast()
         
         for key in keys {
-            if (key.count != 4) {
+            if (key.count != 4 && !key_is_custom(key)) {
                 throw errors.keyLengthError
             }
         }
         
         self.keys = keys
         self.units = units
+    }
+    
+    func key_is_custom(_ key: String) -> Bool {
+        for kv in Property.custom_commands {
+            if kv.key == key {
+                return true
+            }
+        }
+        return false
     }
     
     func is_empty() -> Bool {
