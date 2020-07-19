@@ -178,7 +178,7 @@ class ViewController: NSViewController {
                 keys.append(ss)
             }
             
-            let units = self.dd_p1_custom_type.titleOfSelectedItem!
+            let units = self.dd_p1_custom_type.titleOfSelectedItem ?? ""
             
             do {
                 prop = try Property(fromArr: keys, units: units)
