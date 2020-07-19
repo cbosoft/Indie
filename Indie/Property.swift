@@ -115,7 +115,7 @@ class Property {
         
         let display: Double = n>0 ? tot/Double(n) : Double.nan
         
-        return String(format: "%.1f%@", display, self.units)
+        return String(format: "%.0f%@", display, self.units)
     }
     
     func toStringArr() -> [String] {
