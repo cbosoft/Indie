@@ -42,6 +42,9 @@ public typealias FLT_ = (UInt8, UInt8, UInt8, UInt8)
 /// Floating point, signed, 7 bits exponent, 8 bits fraction
 public typealias SP78 = (UInt8, UInt8)
 
+/// Unsigned integer, 2 bytes
+public typealias UI16 = (UInt8, UInt8)
+
 public typealias SMCBytes = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
                              UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
                              UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
@@ -82,6 +85,10 @@ public extension Int {
 
     func toFPE2() -> FPE2 {
         return (UInt8(self >> 6), UInt8((self << 2) ^ ((self >> 6) << 8)))
+    }
+    
+    init(fromUI16 bytes: UI16) {
+        self = (Int(bytes.0) << 8) + Int(bytes.1)
     }
 }
 
@@ -269,6 +276,8 @@ public struct DataTypes {
                  DataType(type: FourCharCode(fromStaticString: "ui32"), size: 4)
     public static let FLT_ =
                  DataType(type: FourCharCode(fromStaticString: "flt "), size: 4)
+    public static let UI16 =
+                 DataType(type: FourCharCode(fromStaticString: "ui16"), size: 2)
 }
 
 public struct SMCKey {
@@ -461,6 +470,9 @@ public struct SMCKit {
                     
                 case DataTypes.SP78:
                     return Double(fromSP78: (bytes.0, bytes.1))
+                    
+                case DataTypes.UI16:
+                    return Double(Int(fromUI16: (bytes.0, bytes.1)))
                     
                 default:
                     print("easy read: unknown type encountered", dataType.type.toString())
