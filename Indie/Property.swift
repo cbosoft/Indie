@@ -11,6 +11,8 @@ import Foundation
 
 class Property {
     
+    static let custom_commands = ["battery": Property.battery ]
+    
     var keys: [String] = []
     var units : String = ""
     
@@ -63,12 +65,37 @@ class Property {
         return self.keys.count == 0
     }
     
+    func battery() -> Double {
+        let rm = SMCKit.easyReadData("B0RM")
+        let fc = SMCKit.easyReadData("B0FC")
+        return rm*100.0/fc
+    }
+    
+    func get_value(_ key: String) -> Double {
+        
+        if key.count == 4 {
+            let val = SMCKit.easyReadData(key)
+        
+            if val == val {
+                return val
+            }
+        }
+        
+        let f_maybe = Property.custom_commands[key]
+        if f_maybe != nil {
+            let f = f_maybe!
+            return f(self)()
+        }
+        
+        return Double.nan
+    }
+    
     func measure() -> String {
         var tot: Double = 0.0
         var n: Int = 0
         
         for k in self.keys {
-            let val = SMCKit.easyReadData(k)
+            let val = self.get_value(k)
             
             // if val is not nan...
             if val == val {
