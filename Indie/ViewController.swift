@@ -320,13 +320,11 @@ class ViewController: NSViewController {
     /// Reflect the contents of the properties array onto the UI. Called after the a previous state is loaded.
     func reflect() {
         
-        print("reflect", self.properties)
         if self.properties.count == 0 {
             return
         }
         
         let prop1 = self.properties[0].toStringArr()
-        print(prop1)
         let predef_key = self.strArr_in_predef(strings: prop1)
         if predef_key != nil {
             // is prebuilt
@@ -352,7 +350,6 @@ class ViewController: NSViewController {
         self.setPropert2IsEnabled(self.properties.count == 2)
         if self.properties.count == 2 {
             let prop2 = self.properties[1].toStringArr()
-            print(prop2)
             let predef_key = self.strArr_in_predef(strings: prop2)
             if predef_key != nil {
                 // is prebuilt
@@ -380,9 +377,7 @@ class ViewController: NSViewController {
     // MARK: check predefined for strarr
     func strArr_in_predef(strings: [String]) -> String? {
         for kv in self.predef_keys {
-            print(strings, kv.value)
             if strings == kv.value {
-                print(kv.key)
                 return kv.key
             }
         }
