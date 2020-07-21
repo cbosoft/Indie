@@ -35,7 +35,7 @@ class ViewController: NSViewController {
     /// have two fans etc etc.
     let predef_keys = [
         "Fan Av. Speed": ["F0Ac", "F1Ac", " rpm"],
-        "Battery Percentage": ["battery", "%"],
+        "Battery Percentage": ["BRSC", "%"],
         "CPU 0 Av. Core Temp.": ["TC1C", "TC2C", "TC3C", "TC4C", "ºC"]
     ];
     
