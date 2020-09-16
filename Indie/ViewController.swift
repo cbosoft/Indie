@@ -96,8 +96,8 @@ class ViewController: NSViewController {
             self.statusItem.button?.title = self.properties[0].measure()
         }
         else if self.properties.count == 2 {
-            statusItem.button?.font = NSFont.systemFont(ofSize: 8)
-            self.statusItem.button?.title = String(format: "%@\n%@",
+            statusItem.button?.font = NSFont.systemFont(ofSize:13)
+            self.statusItem.button?.title = String(format: "%@ | %@",
                             self.properties[0].measure(),
                             self.properties[1].measure())
         }
